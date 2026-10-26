@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KEYVNUYTIN - Shop key uy tín</title>
+  <meta name="description"
+    content="Cửa hàng key bản quyền và phần mềm số.">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #0b1020;
+      color: #f3f6ff;
+      font-family: Arial, sans-serif;
+    }
+    header {
+      padding: 20px 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      border-bottom: 1px solid #26304a;
+    }
+    .logo { font-size: 23px; font-weight: 800; }
+    .logo span { color: #54a5ff; }
+    a { color: inherit; text-decoration: none; }
+    .hero {
+      padding: 65px 7% 45px;
+      background: linear-gradient(130deg, #15284c, #0b1020);
+    }
+    .hero h1 { font-size: clamp(30px, 5vw, 48px); }
+    .hero p { color: #b6c4dd; line-height: 1.8; }
+    .tag {
+      color: #78b8ff;
+      font-size: 13px;
+      font-weight: bold;
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 18px;
+      background: #2879ed;
+      color: white;
+      border: 0;
+      border-radius: 9px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    main { padding: 30px 7% 60px; }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(
+        auto-fit, minmax(min(100%, 220px), 1fr)
+      );
+      gap: 20px;
+    }
+    .card {
+      padding: 22px;
+      border: 1px solid #29334c;
+      border-radius: 15px;
+      background: #141b2e;
+    }
+    .product-icon {
+      height: 110px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      background: #1d2d4b;
+      font-size: 42px;
+    }
+    .price { color: #73b5ff; font-size: 23px; }
+    .muted { color: #aab6cc; line-height: 1.7; }
+    .notice {
+      margin-top: 28px;
+      padding: 20px;
+      border-radius: 12px;
+      background: #141b2e;
+      line-height: 1.8;
+    }
+    footer {
+      padding: 25px 7%;
+      color: #aab6cc;
+      border-top: 1px solid #29334c;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="logo" href="#">KEY<span>VNUYTIN</span></a>
+    <a href="#san-pham">Sản phẩm</a>
+    <a href="#huong-dan">Hướng dẫn mua</a>
+  </header>
+
+  <section class="hero">
+    <div class="tag">SHOP KEY & PHẦN MỀM SỐ</div>
+    <h1>Mua key dễ dàng.<br>Hỗ trợ tận tâm.</h1>
+    <p>
+      Chọn sản phẩm, gửi yêu cầu mua hàng
+      và chờ shop xác nhận thủ công.
+    </p>
+    <a class="btn" href="#san-pham">Khám phá sản phẩm</a>
+  </section>
+
+  <main>
+    <h2 id="san-pham">Sản phẩm nổi bật</h2>
+    <p class="muted">
+      Giá và thông tin bên dưới là dữ liệu mẫu.
+    </p>
+
+    <div class="products">
+      <article class="card">
+        <div class="product-icon">🔑</div>
+        <h3>Key sản phẩm A</h3>
+        <p class="muted">Mô tả và thời hạn sử dụng.</p>
+        <p class="price">30.000đ</p>
+        <button class="btn"
+          onclick="datHang('Key sản phẩm A', 30000)">
+          Yêu cầu mua
+        </button>
+      </article>
+
+      <article class="card">
+        <div class="product-icon">💻</div>
+        <h3>Phần mềm B</h3>
+        <p class="muted">Thông tin gói bản quyền.</p>
+        <p class="price">50.000đ</p>
+        <button class="btn"
+          onclick="datHang('Phần mềm B', 50000)">
+          Yêu cầu mua
+        </button>
+      </article>
+
+      <article class="card">
+        <div class="product-icon">⚡</div>
+        <h3>Gói dịch vụ C</h3>
+        <p class="muted">Thông tin gói dịch vụ.</p>
+        <p class="price">80.000đ</p>
+        <button class="btn"
+          onclick="datHang('Gói dịch vụ C', 80000)">
+          Yêu cầu mua
+        </button>
+      </article>
+    </div>
+
+    <section class="notice" id="huong-dan">
+      <h2>Quy trình mua hàng</h2>
+      <p>1. Chọn sản phẩm muốn mua.</p>
+      <p>2. Gửi yêu cầu cho shop.</p>
+      <p>3. Shop kiểm tra và xác nhận đơn.</p>
+      <p>4. Shop giao sản phẩm sau khi xác minh.</p>
+    </section>
+  </main>
+
+  <footer>
+    <strong>KEYVNUYTIN</strong>
+    <p>Hỗ trợ khách hàng và xác nhận đơn thủ công.</p>
+  </footer>
+
+  <script>
+    function datHang(ten, gia) {
+      alert(
+        "Bạn đã chọn: " + ten +
+        "\nGiá: " + gia.toLocaleString("vi-VN") +
+        "đ\n\nĐây là bản demo. Chức năng gửi đơn sẽ được "
+        + "kết nối ở bước tiếp theo."
+      );
+    }
+  </script>
+</body>
+</html>
