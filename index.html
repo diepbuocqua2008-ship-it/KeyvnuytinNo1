@@ -3,169 +3,282 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>KEYVNUYTIN - Shop key uy tín</title>
-  <meta name="description"
-    content="Cửa hàng key bản quyền và phần mềm số.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KEY VN - Shop Key tự động</title>
+
   <style>
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      background: #0b1020;
-      color: #f3f6ff;
       font-family: Arial, sans-serif;
+      background: #f5f8fc;
+      color: #17243a;
     }
+
     header {
-      padding: 20px 7%;
+      height: 76px;
+      background: white;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
-      border-bottom: 1px solid #26304a;
+      padding: 0 7%;
+      border-bottom: 1px solid #e6edf5;
+      box-shadow: 0 3px 15px #00000005;
     }
-    .logo { font-size: 23px; font-weight: 800; }
-    .logo span { color: #54a5ff; }
-    a { color: inherit; text-decoration: none; }
-    .hero {
-      padding: 65px 7% 45px;
-      background: linear-gradient(130deg, #15284c, #0b1020);
-    }
-    .hero h1 { font-size: clamp(30px, 5vw, 48px); }
-    .hero p { color: #b6c4dd; line-height: 1.8; }
-    .tag {
-      color: #78b8ff;
-      font-size: 13px;
+
+    .logo {
+      font-size: 23px;
       font-weight: bold;
     }
-    .btn {
-      display: inline-block;
+
+    .logo span {
+      color: #139fe8;
+    }
+
+    nav {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #52627a;
+      padding: 12px 16px;
+      border-radius: 25px;
+    }
+
+    nav a:hover,
+    nav a.active {
+      background: #e7f6ff;
+      color: #0799e5;
+    }
+
+    button {
+      border: none;
+      border-radius: 10px;
       padding: 12px 18px;
-      background: #2879ed;
-      color: white;
-      border: 0;
-      border-radius: 9px;
       cursor: pointer;
       font-weight: bold;
     }
-    main { padding: 30px 7% 60px; }
-    .products {
-      display: grid;
-      grid-template-columns: repeat(
-        auto-fit, minmax(min(100%, 220px), 1fr)
-      );
-      gap: 20px;
+
+    .login {
+      background: white;
+      color: #159fe8;
+      border: 1px solid #159fe8;
     }
-    .card {
-      padding: 22px;
-      border: 1px solid #29334c;
-      border-radius: 15px;
-      background: #141b2e;
+
+    .register,
+    .buy {
+      background: #159fe8;
+      color: white;
     }
-    .product-icon {
-      height: 110px;
-      display: grid;
-      place-items: center;
-      border-radius: 10px;
-      background: #1d2d4b;
-      font-size: 42px;
+
+    .hero {
+      margin: 35px auto;
+      max-width: 1100px;
+      padding: 65px 45px;
+      border-radius: 25px;
+      background: linear-gradient(120deg, white, #e4f5ff);
     }
-    .price { color: #73b5ff; font-size: 23px; }
-    .muted { color: #aab6cc; line-height: 1.7; }
-    .notice {
-      margin-top: 28px;
-      padding: 20px;
-      border-radius: 12px;
-      background: #141b2e;
+
+    .hero h1 {
+      font-size: 44px;
+      line-height: 1.25;
+    }
+
+    .hero h1 span {
+      color: #159fe8;
+    }
+
+    .hero p {
+      color: #718096;
       line-height: 1.8;
     }
+
+    .products {
+      max-width: 1100px;
+      margin: 55px auto;
+      padding: 0 15px;
+    }
+
+    .product-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .product {
+      padding: 25px;
+      background: white;
+      border: 1px solid #e4ebf3;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px #12345608;
+    }
+
+    .product h3 {
+      margin-top: 5px;
+    }
+
+    .product p {
+      color: #718096;
+      line-height: 1.6;
+    }
+
+    .price {
+      font-size: 24px;
+      font-weight: bold;
+      color: #159fe8;
+      margin: 22px 0;
+    }
+
+    .buy {
+      width: 100%;
+    }
+
     footer {
-      padding: 25px 7%;
-      color: #aab6cc;
-      border-top: 1px solid #29334c;
+      text-align: center;
+      padding: 30px;
+      color: #718096;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        padding: 12px;
+        height: auto;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      nav {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+      }
+
+      nav a {
+        padding: 10px;
+      }
+
+      .hero {
+        margin: 15px;
+        padding: 30px 20px;
+      }
+
+      .hero h1 {
+        font-size: 32px;
+      }
+
+      .products {
+        margin-top: 35px;
+      }
+
+      .product-list {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
+
 <body>
+
   <header>
-    <a class="logo" href="#">KEY<span>VNUYTIN</span></a>
-    <a href="#san-pham">Sản phẩm</a>
-    <a href="#huong-dan">Hướng dẫn mua</a>
+    <div class="logo">☑ KEY<span>VN</span></div>
+
+    <nav>
+      <a href="#home" class="active">⌂ Trang chủ</a>
+      <a href="#products">⬡ Sản phẩm</a>
+      <a href="#account">♙ Tài khoản</a>
+    </nav>
+
+    <div id="account">
+      <button class="login" onclick="login()">
+        Đăng nhập
+      </button>
+
+      <button class="register" onclick="register()">
+        Đăng ký
+      </button>
+    </div>
   </header>
 
-  <section class="hero">
-    <div class="tag">SHOP KEY & PHẦN MỀM SỐ</div>
-    <h1>Mua key dễ dàng.<br>Hỗ trợ tận tâm.</h1>
+  <section class="hero" id="home">
+    <p>✦ CHÀO MỪNG ĐẾN VỚI KEY VN</p>
+
+    <h1>
+      Mua KEY dễ dàng.<br>
+      <span>Nhận KEY nhanh chóng.</span>
+    </h1>
+
     <p>
-      Chọn sản phẩm, gửi yêu cầu mua hàng
-      và chờ shop xác nhận thủ công.
+      Chọn sản phẩm phù hợp, tạo đơn hàng
+      và quản lý giao dịch của bạn.
     </p>
-    <a class="btn" href="#san-pham">Khám phá sản phẩm</a>
+
+    <a href="#products">
+      <button class="register">Xem sản phẩm →</button>
+    </a>
   </section>
 
-  <main>
-    <h2 id="san-pham">Sản phẩm nổi bật</h2>
-    <p class="muted">
-      Giá và thông tin bên dưới là dữ liệu mẫu.
-    </p>
+  <section class="products" id="products">
+    <h2>Sản phẩm nổi bật</h2>
+    <p>Danh mục sản phẩm của KEY VN</p>
 
-    <div class="products">
-      <article class="card">
-        <div class="product-icon">🔑</div>
-        <h3>Key sản phẩm A</h3>
-        <p class="muted">Mô tả và thời hạn sử dụng.</p>
-        <p class="price">30.000đ</p>
-        <button class="btn"
-          onclick="datHang('Key sản phẩm A', 30000)">
-          Yêu cầu mua
-        </button>
-      </article>
+    <div class="product-list">
 
-      <article class="card">
-        <div class="product-icon">💻</div>
-        <h3>Phần mềm B</h3>
-        <p class="muted">Thông tin gói bản quyền.</p>
-        <p class="price">50.000đ</p>
-        <button class="btn"
-          onclick="datHang('Phần mềm B', 50000)">
-          Yêu cầu mua
+      <div class="product">
+        <h3>🔑 KEY Windows</h3>
+        <p>Thông tin sản phẩm và phiên bản.</p>
+        <div class="price">199.000đ</div>
+        <button class="buy" onclick="buy('KEY Windows')">
+          Mua ngay
         </button>
-      </article>
+      </div>
 
-      <article class="card">
-        <div class="product-icon">⚡</div>
-        <h3>Gói dịch vụ C</h3>
-        <p class="muted">Thông tin gói dịch vụ.</p>
-        <p class="price">80.000đ</p>
-        <button class="btn"
-          onclick="datHang('Gói dịch vụ C', 80000)">
-          Yêu cầu mua
+      <div class="product">
+        <h3>💻 KEY Office</h3>
+        <p>Phần mềm văn phòng theo gói phù hợp.</p>
+        <div class="price">249.000đ</div>
+        <button class="buy" onclick="buy('KEY Office')">
+          Mua ngay
         </button>
-      </article>
+      </div>
+
+      <div class="product">
+        <h3>🛡️ KEY Antivirus</h3>
+        <p>Giải pháp bảo mật cho thiết bị.</p>
+        <div class="price">99.000đ</div>
+        <button class="buy" onclick="buy('KEY Antivirus')">
+          Mua ngay
+        </button>
+      </div>
+
     </div>
-
-    <section class="notice" id="huong-dan">
-      <h2>Quy trình mua hàng</h2>
-      <p>1. Chọn sản phẩm muốn mua.</p>
-      <p>2. Gửi yêu cầu cho shop.</p>
-      <p>3. Shop kiểm tra và xác nhận đơn.</p>
-      <p>4. Shop giao sản phẩm sau khi xác minh.</p>
-    </section>
-  </main>
+  </section>
 
   <footer>
-    <strong>KEYVNUYTIN</strong>
-    <p>Hỗ trợ khách hàng và xác nhận đơn thủ công.</p>
+    © 2026 KEY VN - Website bán KEY
   </footer>
 
   <script>
-    function datHang(ten, gia) {
+    function login() {
+      alert("Chức năng đăng nhập sẽ được xây dựng ở bước tiếp theo.");
+    }
+
+    function register() {
+      alert("Chức năng đăng ký sẽ được xây dựng ở bước tiếp theo.");
+    }
+
+    function buy(product) {
       alert(
-        "Bạn đã chọn: " + ten +
-        "\nGiá: " + gia.toLocaleString("vi-VN") +
-        "đ\n\nĐây là bản demo. Chức năng gửi đơn sẽ được "
-        + "kết nối ở bước tiếp theo."
+        "Bạn chọn: " + product +
+        "\nCần đăng nhập và tích hợp thanh toán để mua hàng."
       );
     }
   </script>
+
 </body>
 </html>
